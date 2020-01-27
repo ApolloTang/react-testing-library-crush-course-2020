@@ -49,7 +49,7 @@ $ yarn n:w ./src/path/to/project/filename.js   # run node on the specified file 
 
 -----
 
-The following script will operate on all projects and files in `./src/` (`./src/**/*.*`), There is no need to specify path to file:
+The following script will operate on all projects and files in `./src/`, There is no need to specify path to file:
 
 ```bash
 $ yarn t:coverage    # run jest coverage of all project
