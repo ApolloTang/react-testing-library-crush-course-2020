@@ -73,6 +73,11 @@ describe('Todo App',()=>{
   })
 
 
+
+  // ============================================
+  // The remaining tests test the CRUD operation
+  // ============================================
+
   test('Can update todos [Operation: update]', () =>{
     const {
       getByLabelText,
@@ -85,7 +90,8 @@ describe('Todo App',()=>{
       'learn react', 'learn redux', 'learn typescript'
     ]
 
-    // We want to update todo item with the following text
+    // We want to update the todo item with the following text.
+    // To update we mean to check and complted the todo item.
     const todoText_toUpdate = todoTexts[1]  // 'learn redux'
 
     const newTodoInput = getByLabelText(regex_newTodoLabel)
@@ -132,7 +138,7 @@ describe('Todo App',()=>{
       'learn react', 'learn redux', 'learn typescript'
     ]
 
-    // We want to remove todo item with the following text
+    // We want to remove the todo item with the following text
     const todoText_toDelete = todoTexts[1]  // 'learn redux'
 
     const newTodoInput = getByLabelText(regex_newTodoLabel)
@@ -146,6 +152,10 @@ describe('Todo App',()=>{
     })
 
     // now todo items has been created
+    expect(getAllByTestId('todo-item')).toHaveLength(3)
+
+
+    // get all the todo items
     const todoItems = getAllByTestId('todo-item')
 
     // Since delete button is not inside label element:
@@ -161,7 +171,7 @@ describe('Todo App',()=>{
     // we cannot use getByText('learn redux') to reach our targeted
     // delete button <button>X</button>.
     //
-    // To get the partical delete button we have to search among
+    // To get the targeted delete button we have to search among
     // all our data-testid="todo-item":
 
     const todoItemsToDelete = todoItems.filter( (todoItem)=>{
