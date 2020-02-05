@@ -40,7 +40,7 @@ const MyComponent = () => (
 
 test('Container is like window.document', ()=>{
   const { container } = render(<MyComponent/>)
-  const heystack = container.querySelector('.needle')
-  expect(heystack.innerHTML).toBe('<b>needle</b>')
+  const needle = container.querySelector('.needle')
+  expect(needle.innerHTML).toBe('<b>needle</b>')
 })
 
