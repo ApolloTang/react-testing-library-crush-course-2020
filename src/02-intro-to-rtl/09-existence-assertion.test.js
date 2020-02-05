@@ -45,8 +45,9 @@ describe(`
         to assert existence
       `, ()=>{
       getByText('React')
-
       // Because the above return the found node and does not throw
+
+      // throw new Error('opps!')  // <--- uncomment this: this is how jest know a assertion fail: by catching an error
     })
   })
 
