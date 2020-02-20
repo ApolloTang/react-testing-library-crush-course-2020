@@ -26,11 +26,6 @@ test('[Rerender for props update]', ()=>{
   expect(container).toHaveTextContent('0')
 
   ;[1,2,3].forEach( x=>{
-    expect(container).not.toHaveTextContent(x+'')
-    //               ^^^^^
-  })
-
-  ;[1,2,3].forEach( x=>{
     rerender(<MyComponent x={x} />) // <----- rerender with new props
     expect(container).toHaveTextContent(x+'')
   })
