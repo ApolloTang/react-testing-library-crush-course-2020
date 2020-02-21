@@ -13,11 +13,11 @@ import jsdomGlobal from 'jsdom-global'
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-// Here is the jsdom window
-const { window:jsDomWindow } = new JSDOM(`
-  <!DOCTYPE html>
-  <div id="react-container">rect component goes here</div>
-`)
+  // Here is the jsdom window
+  const { window:jsDomWindow } = new JSDOM(`
+    <!DOCTYPE html>
+    <div id="react-container">rect component goes here</div>
+  `)
 
 
 const MyComponent = () => (
@@ -25,27 +25,27 @@ const MyComponent = () => (
 )
 
 
-// Get a reference to the div element for ReactDOM to render
-const reactContainer = jsDomWindow.document.getElementById('react-container')
-console.log('[0] Text content of reactContainer: ', reactContainer.textContent)
+  // Get a reference to the div element for ReactDOM to render
+  const reactContainer = jsDomWindow.document.getElementById('react-container')
+  console.log('[0] Text content of reactContainer: ', reactContainer.textContent)
 
 
-// React need the the window global object in node
-try {
-  console.log('[1] window object in node exist: ', Object.keys(window).length !==0 )
-} catch (e) {
-  console.log('[1] window object in node not available')  // <---
-}
+  // React need the the window global object in node
+  try {
+    console.log('[1] window object in node exist: ', Object.keys(window).length !==0 )
+  } catch (e) {
+    console.log('[1] window object in node not available')  // <---
+  }
 
-// Add window object to node
-jsdomGlobal()
+  // Add window object to node
+  jsdomGlobal()
 
 
-try {
-  console.log('[2] window object in node exist: ', Object.keys(window).length !==0 ) // true
-} catch (e) {
-  console.log('[2] window object in node not available')
-}
+  try {
+    console.log('[2] window object in node exist: ', Object.keys(window).length !==0 ) // true
+  } catch (e) {
+    console.log('[2] window object in node not available')
+  }
 
 ReactDOM.render(<MyComponent />, reactContainer) // Render virtual dom into jsdome
 
