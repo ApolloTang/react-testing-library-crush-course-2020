@@ -25,9 +25,9 @@ const MyComponent = () => (
 )
 
 
-  // Get a reference to the div element for ReactDOM to render
-  const reactContainer = jsDomWindow.document.getElementById('react-container')
-  console.log('[0] Text content of reactContainer: ', reactContainer.textContent)
+// Get a reference to the div element for ReactDOM to render
+const reactContainer = jsDomWindow.document.getElementById('react-container')
+console.log('[0] Text content of reactContainer: ', reactContainer.textContent)
 
 
   // React need the the window global object in node
