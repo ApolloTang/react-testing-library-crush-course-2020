@@ -4,8 +4,8 @@ import {
 } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
-import {Form_subscription} from './form-subscription-v1'
-// import {Form_subscription} from './form-subscription-v2'
+// import {Form_subscription} from './form-subscription-v1'
+import {Form_subscription} from './form-subscription-v2-refactored'
 
 const api = {
   subscription: jest.fn(()=>new Promise( rs => setTimeout( ()=>{rs('foo')}, 1000) ))
